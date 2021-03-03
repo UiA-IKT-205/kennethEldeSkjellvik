@@ -6,17 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/stopButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/stopButtonText"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.734"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/countDownView"
-        app:layout_constraintVertical_bias="0.523" />
 
     <TextView
         android:id="@+id/countDownView"
@@ -28,6 +17,17 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/countDownViewPause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/default_time_display"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.575" />
+
     <Button
         android:id="@+id/startCountdownButton"
         android:layout_width="wrap_content"
@@ -35,59 +35,77 @@
         android:text="@string/startButtonText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.265"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/countDownView"
-        app:layout_constraintVertical_bias="0.523" />
+        />
 
-    <Button
-        android:id="@+id/btn30"
-        android:layout_width="wrap_content"
+    <SeekBar
+        android:id="@+id/seekBarWork"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="@string/min30"
+        android:max="300"
+        android:min="15"
+        app:layout_constraintBottom_toTopOf="@+id/seekBarBreak"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+
+    <SeekBar
+        android:id="@+id/seekBarBreak"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:max="300"
+        android:min="15"
+        app:layout_constraintBottom_toTopOf="@+id/startCountdownButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editLoops"
+        android:text="@string/numberOfInterval"
+        android:textAlignment="center"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/startCountdownButton"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/startCountdownButton"
-        app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.917" />
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-    <Button
-        android:id="@+id/btn60"
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="174dp"
+        android:layout_marginEnd="187dp"
+        android:text="Work"
+        app:layout_constraintBottom_toTopOf="@+id/seekBarWork"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/currentWorktimeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/min60"
-        app:layout_constraintBottom_toBottomOf="@id/btn30"
+        android:layout_marginBottom="50dp"
+        android:text="@string/workTimerText"
+        app:layout_constraintBottom_toTopOf="@+id/countDownView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/startCountdownButton"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/countDownView" />
 
-    <Button
-        android:id="@+id/btn90"
+    <TextView
+        android:id="@+id/currentPausetimeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/min90"
-        app:layout_constraintBottom_toBottomOf="@id/btn30"
+        android:layout_marginBottom="105dp"
+        android:text="@string/pauseTimerText"
+        app:layout_constraintBottom_toTopOf="@+id/seekBarWork"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/startCountdownButton"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <Button
-        android:id="@+id/btn120"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/min120"
-        app:layout_constraintBottom_toBottomOf="@id/btn30"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.92"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/startCountdownButton"
-        app:layout_constraintVertical_bias="1.0" />
-
-
+        app:layout_constraintTop_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
