@@ -2,4 +2,6 @@
     <string name="app_name">Piano</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="lagre">Lagre fil</string>
+    <string name="file_name_for_tune">Choose name of file</string>
 </resources>
